@@ -5,10 +5,11 @@ import messageRoutes from "./routes/message.route.js"
 import userRoutes from "./routes/user.route.js"
 import connectToMongodb from "./db/connectToMongodb.js";
 import cookieParser from "cookie-parser";
+import { app,server } from "./sockets/socket.js";
 
-const app=express();
+
 dotenv.config();
-
+ 
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/auth",authRoutes);
@@ -19,7 +20,7 @@ const PORT=process.env.PORT||3000;
 //     res.send("Hello World");
 // })
 
-app.listen(PORT,()=>{
+server.listen(PORT,()=>{
     connectToMongodb();
-    console.log("App listening on port 5000");
+    console.log(`App listening on port ${PORT}`);
 })
