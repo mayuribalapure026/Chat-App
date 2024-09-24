@@ -30,7 +30,7 @@ function Login() {
                     <label className="label p-2">
                         <span className="text-white label-text ">Password</span>
                     </label>
-                    <input type="text" placeholder='Enter Password' className="w-full input input-bordered h-10"
+                    <input type="password" placeholder='Enter Password' className="w-full input input-bordered h-10"
                     value={password} onChange={(e)=>setPassword(e.target.value)}/>
 
                 </div>

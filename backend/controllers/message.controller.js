@@ -35,9 +35,6 @@ export const sendMessage=async(req,res)=>{
         // await conversation.save();
         // await newMessage.save();
 
-        
-
-
         res.status(201).json(newMessage);
 
     }catch(err){
@@ -59,7 +56,7 @@ export const getMessages=async(req,res)=>{
         }
         const messages=conversation.messages;
 
-        return res.status(200).json(conversation.messages);
+        return res.status(200).json(messages);
     }catch(error){
         console.log("Error in messages controller",error.message);
         res.status(500).json({error:"Internal Server Error"});
