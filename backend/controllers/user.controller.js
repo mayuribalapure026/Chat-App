@@ -3,8 +3,8 @@ import User from "../models/user.models.js";
 export const getUserForSidebar=async(req,res)=>{
     try{
         const loggedinUserId=req.user._id;
-        const fileteredUsers=await User.find({_id:{$ne:loggedinUserId}}).select("-password");
-        return res.status(200).json(fileteredUsers);
+        const filteredUsers=await User.find({_id:{$ne:loggedinUserId}}).select("-password");
+        return res.status(200).json(filteredUsers);
 
 
     }catch(err){
